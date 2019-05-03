@@ -62,4 +62,38 @@ Host github.com-jexchan
 * delete protection - enabled.
   
 #### Efs
-* 
+* create
+* vpc - default.
+* select all 6 
+* encrypt - yes
+	* default master key
+* life cycle management - yes
+
+#### BeanStalk
+* name - wsek
+* tags - no
+* php
+* sample
+	* default configuration
+* create
+
+#### Pipeline
+* wsekpipe
+* new service role
+* allow aws to create services
+* default location.
+* github - repo - master.
+* github webhook option
+* **Built** - codecommit - create new
+	* wsekbuild
+	* no description, no tags
+	* custom image - linux - other registry
+		* wodby/drupal-php
+	* Privileged - no
+	* default options
+	* Use **buildspec.yml**
+	* Cloudwatch logs - default yes, s3 optional no.
+* **Deploy** - Elastic beanstalk
+	* App name
+	* Environment
+	
