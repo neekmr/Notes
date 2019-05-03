@@ -13,10 +13,10 @@
 ### GITHUB UPLOAD
 * add ssh keys `https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent`
 * set up ssh config
- * ```$ cd ~/.ssh/
+```$ cd ~/.ssh/
 $ touch config
 $ subl -a config```
- * ```#activehacker account
+```#activehacker account
 Host github.com-activehacker
 	HostName github.com
 	User git
