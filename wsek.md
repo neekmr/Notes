@@ -36,6 +36,21 @@ Host github.com-jexchan
 ### Aws Setup
 * change region to **N.virginia**
 
+#### IAM
+* Change password to something really strong.
+* Enable mfa using google authenticator.
+* **Add-User**
+	* username - strong
+	* only console access
+	* Custon password
+	* Unckeck require password reset.
+* **Group** - selfroot
+* create **no permissions boundry** - assign permissions to users within groups
+* Manage **group permissions** to assign access to users
+* **Password Policy** - check all options - 8, 30, 23
+* Create **Key-Pair**
+*
+
 #### Rds
 * Mysql
 * enbale free tier
@@ -77,6 +92,29 @@ Host github.com-jexchan
 	* default configuration
 * create
 
+#### Build
+* wsekbuild
+* enable build badge
+* no additional configuration
+* add github
+* select build status.
+* select webhook
+	* no other option
+* custom image
+* linux
+* other
+	* wodby/drupal-php
+* disable elevated privileges
+* new service role
+* **TimeOut**- 4mins, 30mins.
+* No certificate
+* default vpc
+* no subnet
+* default sg
+
+#### IMP - Get the s3 bucket name -> make build -> add pipeline
+#### IMP - DO NOT use VPC for build
+
 #### Pipeline
 * wsekpipe
 * new service role
@@ -90,10 +128,28 @@ Host github.com-jexchan
 	* custom image - linux - other registry
 		* wodby/drupal-php
 	* Privileged - no
+	* set timeout- 4min, 30min
 	* default options
-	* Use **buildspec.yml**
+	* Use **buildspec.yml** generally
+		* **NOW** use commands.
 	* Cloudwatch logs - default yes, s3 optional no.
 * **Deploy** - Elastic beanstalk
 	* App name
 	* Environment
-	
+* **Initial build** will fail coz no buildspec yml file, okay.
+
+#### SG setup
+* Create sg for **Efs** and attach
+	* efswsek-security-group, Efs security group, default vps
+	* create
+	* Edit **Inbound** rule
+		* nfs tcp 2049 custom (beanstalk-sg) no-description.
+	* Remove **default** and add newly created sg.
+
+#### EC2 keypair for ssh
+* 
+
+#### Beanstalk Configuration setup.
+* /web and all default
+* Check all security group leaving the default.
+
