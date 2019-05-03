@@ -31,4 +31,35 @@ Host github.com-jexchan
 	User git
 	IdentityFile ~/.ssh/id_rsa_jexchan
 ```
- 
+* Add keys to github.
+
+### Aws Setup
+* change region to **N.virginia**
+
+#### Rds
+* Mysql
+* enbale free tier
+* chose latest version
+* db instance identifier **wsekdbi**
+* set username - alphanumeric.
+* set password - strong.
+* default vpc.
+* subnet group default.
+* Public - **NO**
+* AZ- no preference.
+* create new **SG**
+* dbname - **wsekdb**
+* port - 3306.
+* parameter group - def
+* option group - def
+* IAM db authentication - disable.
+* **Backup** - 35 days.
+* backup window - no preference.
+* copy tags to snapshots - yes.
+* **Enhanced monitoring** - disabled.
+* Log exports - not selected any of the 3 - error, general, slow.
+* **Maintenance** - enable auto minor upgrade, maintenance window - none.
+* delete protection - enabled.
+  
+#### Efs
+* 
