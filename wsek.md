@@ -143,7 +143,8 @@ Host github.com-jexchan
 	* efswsek-security-group, Efs security group, default vps
 	* create
 	* Edit **Inbound** rule
-		* nfs tcp 2049 custom (beanstalk-sg) no-description.
+		* add nfs tcp 2049 custom to efs and then add that sg to beanstalk in **bs configuration**
+		* **SAME** for RDS.
 	* Remove **default** and add newly created sg.
 
 #### EC2 keypair for ssh
