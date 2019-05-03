@@ -156,6 +156,7 @@ Host github.com-jexchan
 
 ### NOTE
 * **DONT** give access to database unless the code is right.(using security groups)
+* make **config/sync/.gitkeep** for the config files.
 
 ### ERRORS
 * **EFS** mount deploy error - sg was not added to bs
