@@ -154,3 +154,6 @@ Host github.com-jexchan
 * /web and all default
 * Check all security group leaving the default.
 
+## NOTE
+* **DONT** give access to database unless the code is right.(using security groups)
+
