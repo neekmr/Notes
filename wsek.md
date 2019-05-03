@@ -1,16 +1,16 @@
-# WSEK PROCESS
+# Wsek Process
 
-### COMPOSER DOWNLOAD
+### Composer download
 1. `composer create-project drupal-composer/drupal-project:8.x-dev wsek --no-interaction`
 
-### GIT
+### Git
 * set git global config name and email.
 * `global ignore` files like .DS_Store
   * `~/.gitignore` and `git config --global core.excludesfile ~/.gitignore`
 * `git init` `git add .` `git commit -m "initial commit"`
 
 
-### GITHUB UPLOAD
+### Github upload
 * add ssh keys `https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent`
 * set up ssh config
 ```
