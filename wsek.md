@@ -1,5 +1,7 @@
 # Wsek Process
 
+## Note - put sample html, get the ssl and then install drupal.
+
 ### Composer download
 1. `composer create-project drupal-composer/drupal-project:8.x-dev wsek --no-interaction`
 2. `git commit initial`
@@ -74,12 +76,15 @@ Host github.com-jexchan
 * backup window - no preference.
 * copy tags to snapshots - yes.
 * **Enhanced monitoring** - disabled.
-* Log exports - not selected any of the 3 - error, general, slow.
+* Log exports - select all 3 - error, general, slow.
 * **Maintenance** - enable auto minor upgrade, maintenance window - none.
 * delete protection - enabled.
   
 #### Efs
-* create
+* Create EFS security group.
+* create and attach sg
+* enable encryption
+* enable lifecyle management
 * vpc - default.
 * select all 6 
 * encrypt - yes
@@ -87,7 +92,7 @@ Host github.com-jexchan
 * life cycle management - yes
 
 #### BeanStalk
-* name - wsek
+* name - wsekbs
 * tags - no
 * php
 * sample
@@ -101,21 +106,26 @@ Host github.com-jexchan
 * add github
 * select build status.
 * select webhook
-	* no other option
+	* push option
 * custom image
 * linux
 * other
 	* wodby/drupal-php
 * disable elevated privileges
 * new service role
-* **TimeOut**- 4mins, 30mins.
+* **TimeOut**- 5mins, 10mins.
 * No certificate
+* **Enable semantic versioning** buildspecfile.
+* Path - no.
+* **Name** build id
 * default vpc
 * no subnet
 * default sg
+* cloudwatch log yes.
 
 #### IMP - Get the s3 bucket name -> make build -> add pipeline
 #### IMP - DO NOT use VPC for build
+#### IMP - Check if existing POLICIES
 
 #### Pipeline
 * wsekpipe
@@ -139,6 +149,7 @@ Host github.com-jexchan
 	* App name
 	* Environment
 * **Initial build** will fail coz no buildspec yml file, okay.
+* **END** will start the build automatically, make sure all the files exist in the code. mainly the **dev.config** file for and **buildspec.yml**.
 
 #### SG setup
 * Create sg for **Efs** and attach
@@ -150,7 +161,10 @@ Host github.com-jexchan
 	* Remove **default** and add newly created sg.
 
 #### EC2 keypair for ssh
-* 
+
+#### First Run
+* will show forbidden coz /web not set.
+* change **software**to /web and **instances** to iclude the sg of rds and efs.
 
 #### Beanstalk Configuration setup.
 * /web and all default
