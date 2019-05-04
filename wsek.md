@@ -2,6 +2,8 @@
 
 ### Composer download
 1. `composer create-project drupal-composer/drupal-project:8.x-dev wsek --no-interaction`
+2. `git commit initial`
+3. add the **config** folder with permissions **755**
 
 ### Git
 * set git global config name and email.
@@ -49,7 +51,7 @@ Host github.com-jexchan
 * Manage **group permissions** to assign access to users
 * **Password Policy** - check all options - 8, 30, 23
 * Create **Key-Pair**
-*
+* Create google 2fa for every account.
 
 #### Rds
 * Mysql
