@@ -34,7 +34,8 @@
 * composer install
 
 ### Live Install
-* `composer install --no-dev`
+* **DISABLE** cache in cloudfront
+* `composer install --no-dev` - buildspec.yml file.
 
 ### Ebextensions
 * `mkdir .ebextensions`
