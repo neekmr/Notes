@@ -1,5 +1,9 @@
 # Wsek Process
 
+## IMP
+* Install drupal on HTTPS
+* disable cloudfront cache before install
+
 ## LOCAL SIDE
 
 ### Setup Git
@@ -17,7 +21,9 @@
 ## .EBEX Procedure
 * Make the pipeline
 * commit `dev.config` file to repo
-* Install drupal
+* remove `settings.php` from `.gitignore`
+* do not install on local
+* Install drupal on live
 * get `Hash`
 * Put in all the `variables`
 * Enable all the `sg` and `keys` in beanstalk environment
