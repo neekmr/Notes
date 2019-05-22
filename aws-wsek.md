@@ -1,6 +1,41 @@
 # Wsek Process
 
-## Note - put sample html, get the ssl and then install drupal.
+## LOCAL SIDE
+
+### Setup Git
+* brew install git
+* set username email
+* global **gitignore** file
+	* vim ~/.gitignore_global
+	* git config --global core.excludesfile ~/.gitignore_global
+
+### Download project
+* `composer create-project drupal-composer/drupal-project:8.x-dev some-dir --no-interaction`
+* git commit
+* git push
+
+## .EBEX Procedure
+* Make the pipeline
+* commit `dev.config` file to repo
+* Install drupal
+* get `Hash`
+* Put in all the `variables`
+* Enable all the `sg` and `keys` in beanstalk environment
+* commit `efs-mount.config` and `settings.php` file to repo
+* Run the build
+
+### Local Install
+* composer install
+
+### Live Install
+* `composer install --no-dev`
+
+### Ebextensions
+* `mkdir .ebextensions`
+* `vim dev.config`
+* `vim efs-mount.config`
+
+### Note - put sample html, get the ssl and then install drupal.
 
 ### Composer download
 1. `composer create-project drupal-composer/drupal-project:8.x-dev wsek --no-interaction`
