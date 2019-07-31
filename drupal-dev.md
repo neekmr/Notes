@@ -18,7 +18,8 @@
 ```
 
 #### Info.yml
-* ```
+
+```
 libraries:
   - 'xero/global-styling'
   - 'xero/global-scripts'  
@@ -27,7 +28,8 @@ libraries:
 
 
 #### Libraries.yml
-* ```
+
+```
 uikit:
   css:
     theme:
@@ -38,7 +40,8 @@ uikit:
 ```
 
 #### Cmod
-* ```
+
+```
 function cmod_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity->isNew()) {
     switch ($entity->bundle()) {
