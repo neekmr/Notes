@@ -23,7 +23,7 @@
 - change theme - vim ~/.zshrc , bureau
 - composer global require drush - composer global require drush/drush
 - add composer to zshrc - export PATH="$HOME/.composer/vendor/bin:$PATH"
-- git config set global - git config --global user.email "nee.gsync@gmail.com", git config --global user.name "Neeraj Kumar"
+- git config set global - git config --global user.email "abc@gmail.com", git config --global user.name "John Doe"
 - brew install php - installs the latest version 
 - php jit compiler error - zzz-myphp.ini in /usr/local/etc/php/7.3/conf.d - 
 	; My php.ini settings
