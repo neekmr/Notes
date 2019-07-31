@@ -1,7 +1,8 @@
 # DevSite
 
 #### Composer.json
-* ```
+
+```
 {
             "type": "package",
             "package": {
